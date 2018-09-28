@@ -1,9 +1,8 @@
 package cscie55.hw2;
 
 /************************************************************ 
-* HW1, Part I -  
-* Initial version of the Elevator class will keep track of the number of passengers destined for each floor
-* and whether a stop on that floor is required. Any number of passengers may board the elevator.
+* HW2, Part I -  
+* The Elevator moves passengers between Floors
 ************************************************************/
 
 import java.util.stream.*;
@@ -77,7 +76,7 @@ public class Elevator {
 * The "boardPassenger" method adds to the Elevator one passenger destined for the indicated floor.
 *
 */
-    public void boardPassenger(int destinationFloor) {
+    public void boardPassenger(int destinationFloor) throws ElevatorFullException {
         this.numPassDest[destinationFloor - 1]++;
     }
 
