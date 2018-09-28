@@ -71,19 +71,5 @@ public class Building {
 
 
     }
-
-/**
-* The "boardPassenger" method adds to the Elevator one passenger destined for the indicated floor.
-*
-*/
-    public void boardPassenger(int destinationFloor) throws ElevatorFullException {
-        this.numPassDest[destinationFloor - 1]++;
-    }
-
-    public String toString(){
-        return "[Floor "+getCurrentFloor()+": "+getNumPass()+" passengers]";
-
-    }
-
-
+    
 }

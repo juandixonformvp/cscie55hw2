@@ -6,6 +6,7 @@ package cscie55.hw2;
 ************************************************************/
 
 import java.util.stream.*;
+import java.io.IOException;
 
 public class Elevator {
 
@@ -78,7 +79,21 @@ public class Elevator {
 *
 */
     public void boardPassenger(int destinationFloor) throws ElevatorFullException {
-        this.numPassDest[destinationFloor - 1]++;
+        try {
+            List<String> lines = Files.readAllLines(filePath, charset);
+
+            for (String line : lines) {
+                System.out.println(line);
+            }
+        }
+        catch (IOException e) {
+            System.out.println(e);
+            throw new ElevatorFullException("My Cephalopod... He's Gone!", e.getCause());
+       }
+       finally{
+          // this block ALWAYS fires, with or w/o an exception.
+          System.out.println("Ultimately, it is a thing accomplished!");
+       }    
     }
 
     public String toString(){
