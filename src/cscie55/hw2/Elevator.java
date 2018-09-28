@@ -9,7 +9,8 @@ import java.util.stream.*;
 
 public class Elevator {
 
-    private static final int FLOORS = 7;
+    /*private static final int FLOORS = 7;*/
+    private static final int CAPACITY = 10;
     private int currentFloor;
     private boolean direction;
     private int numPassDest[] = new int[FLOORS];
