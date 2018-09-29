@@ -12,20 +12,90 @@ public class myTest {
             Building building = new Building();
             Elevator elevator = building.getElevator();
 
-            building.getFloor(1).waitForElevator();
-            building.getFloor(1).waitForElevator();
-            building.getFloor(2).waitForElevator();
-            building.getFloor(2).waitForElevator();
-            building.getFloor(3).waitForElevator();
-            building.getFloor(3).waitForElevator();
-            building.getFloor(4).waitForElevator();
-            building.getFloor(4).waitForElevator();
-            building.getFloor(5).waitForElevator();
-            building.getFloor(5).waitForElevator();
-            building.getFloor(6).waitForElevator();
-            building.getFloor(6).waitForElevator();
-            building.getFloor(7).waitForElevator();
-            building.getFloor(7).waitForElevator();
+            try {
+                elevator.boardPassenger(1);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(1);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(2);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(2);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(3);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(3);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(4);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(4);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(5);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(5);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(6);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(6);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(7);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
+            try {
+                elevator.boardPassenger(7);
+            }
+            catch(ElevatorFullException e) {
+                elevator.move();
+            }
             elevator.move();
             elevator.move();
             elevator.move();
