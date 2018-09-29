@@ -77,13 +77,18 @@ public class Elevator {
 *
 */
 
-    public void boardPassenger(int destinationFloorNumber) {
-        myBuilding.myFloor[destinationFloorNumber - 1]++;
+    public void boardPassenger(int destinationFloorNumber) throws ElevatorFullException {
+        if(myBuilding.getNumPass() >= CAPACITY) {
+            throw new ElevatorFullException("Elevator is at full capacity. Please wait for the elevator to return.");
+        }
+        else {
+            myBuilding.myFloor[destinationFloorNumber - 1]++;
+        }
     }
 
 /*
     public void boardPassenger(int destinationFloor) throws ElevatorFullException {
-        try {
+        try 
             List<String> lines = Files.readAllLines(filePath, charset);
 
             for (String line : lines) {
