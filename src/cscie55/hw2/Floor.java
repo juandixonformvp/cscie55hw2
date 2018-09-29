@@ -9,7 +9,7 @@ import java.util.stream.*;
 
 public class Floor {
 
-    public int numWaiting;
+    public boolean isWaiting[] = new boolean[FLOORS];
     public int numPass;
     public int floorNumber;
  
@@ -20,15 +20,13 @@ public class Floor {
 * A field for tracking the Elevator's direction of travel.
 * An array-valued field for tracking, each floor, and # passengers destined for that floor. 
 */
- public Floor(Building building, int floorNumber) {
-        this.numWaiting = 0;
+    public Floor(Building building, int floorNumber) {
         this.numPass = 0;
         this.floorNumber = floorNumber;
     }
 
-	
-    public int getPassengersWaiting() {
-        return this.numWaiting;
+    public int getIsWaiting() {
+        return this.isWaiting[this.floorNumber - 1];
     }
 
     public void setNumPass() {
@@ -56,7 +54,7 @@ public class Floor {
 *
 */
     public void waitForElevator() {
-
+        this.isWaiting[this.floorNumber - 1] = true;
     }
 
 }
