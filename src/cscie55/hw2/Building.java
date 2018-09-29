@@ -9,8 +9,8 @@ import java.util.stream.*;
 
 public class Building {
 
-    private static final int FLOORS = 7;
-    private Elevator myElevator;
+    public static final int FLOORS = 7;
+    public Elevator myElevator;
     private int myFloor[] = new int[FLOORS];
  
 /** Initializes the current floor, and direction.
@@ -21,8 +21,7 @@ public class Building {
 * An array-valued field for tracking, each floor, and # passengers destined for that floor. 
 */
  public Building() {
-        this.myElevator = new Elevator();
-        this.direction = true;
+        this.myElevator = new Elevator(this);
     }
 
 	

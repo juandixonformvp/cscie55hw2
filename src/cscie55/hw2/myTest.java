@@ -8,24 +8,11 @@ public class myTest {
     */    
         public static void main(String[] argv){
             System.out.println("");
-            System.out.println("");
-            Elevator elevator_1 = new Elevator();
-            elevator_1.boardPassenger(3);
-            elevator_1.boardPassenger(3);
-            elevator_1.boardPassenger(5);
-            elevator_1.move();
-            elevator_1.move();
-            elevator_1.move();
-            elevator_1.move();
-            elevator_1.move();
-            elevator_1.move();
-            elevator_1.move();
-            elevator_1.move();
-            elevator_1.move();
-            elevator_1.move();
-            elevator_1.move();
-            elevator_1.move();
-            elevator_1.move();
+            System.out.println("testing");
+            Building building = new Building();
+            Elevator elevator = building.getElevator();
+            int expectedFloorNumber = 1;
+            elevator.move();
             
         }
         

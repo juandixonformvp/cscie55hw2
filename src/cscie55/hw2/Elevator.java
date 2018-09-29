@@ -32,10 +32,14 @@ public class Elevator {
     public int getCurrentFloor() {
         return this.currentFloor;
     }
-	
-    public int getNumPass() {
-        return IntStream.of(this.myBuilding.myfloor()).sum();
+
+    public boolean getDirectionUp() {
+        return this.directionUp;
     }
+	
+    /*public int getNumPass() {
+        return IntStream.of(this.myBuilding.myfloor()).sum();
+    }*/
 
 /**
 * The "move" method increments/decrements the current floor. 
@@ -53,7 +57,7 @@ public class Elevator {
             this.directionUp = true;
         }    
 
-        if (currentFloor == FLOORS) {
+        if (currentFloor == myBuilding.FLOORS) {
             this.directionUp = false;
         }
 
@@ -65,7 +69,7 @@ public class Elevator {
             this.currentFloor--;
         }
 
-        this.numPassDest[currentFloor - 1] = 0;
+        // this.numPassDest[currentFloor - 1] = 0;
 
 
     }
@@ -76,7 +80,7 @@ public class Elevator {
 */
 
 public void boardPassenger(int destinationFloorNumber) {
-    this.numPassDest[destinationFloor - 1]++;
+    // this.numPassDest[destinationFloor - 1]++;
 }
 
 /*
@@ -99,7 +103,7 @@ public void boardPassenger(int destinationFloorNumber) {
     }*/
 
     public String toString(){
-        return "[Floor "+getCurrentFloor()+": "+getNumPass()+" passengers]";
+        return "Floor "+getCurrentFloor()+": "+getDirectionUp();
 
     }
 
