@@ -47,6 +47,17 @@ public class Elevator {
     public void move() {
 
         myBuilding.getFloor(this.currentFloor).clearNumPass();
+        System.out.println("Current" + this.currentFloor);
+        System.out.println(myBuilding.getFloor(this.currentFloor).getIsWaitingArray());
+
+        // if(myBuilding.getFloor(this.currentFloor).getIsWaitingArray() == true) {
+        //     try {
+        //         this.boardPassenger(1);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         this.move();
+        //     }
+        // }
 
         if (currentFloor == 1) {
             this.directionUp = true;
@@ -74,14 +85,12 @@ public class Elevator {
 */
 
     public void boardPassenger(int destinationFloorNumber) throws ElevatorFullException {
-        // System.out.println(myBuilding.getTotalPass());
         if(myBuilding.getTotalPass() >= CAPACITY) {
             throw new ElevatorFullException("Elevator is at full capacity. Please wait for the elevator to return.");
         }
         else {
             myBuilding.getFloor(destinationFloorNumber).setNumPass();
         }
-        // System.out.println(this.toString());
     }
 
     public String toString(){

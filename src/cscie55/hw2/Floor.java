@@ -9,7 +9,7 @@ import java.util.stream.*;
 
 public class Floor {
 
-    public boolean isWaiting[] = new boolean[FLOORS];
+    public boolean isWaitingArray[] = new boolean[Building.FLOORS];
     public int numPass;
     public int floorNumber;
  
@@ -25,8 +25,10 @@ public class Floor {
         this.floorNumber = floorNumber;
     }
 
-    public int getIsWaiting() {
-        return this.isWaiting[this.floorNumber - 1];
+    public boolean getIsWaitingArray() {
+        System.out.println(this.floorNumber);
+        System.out.println(this.isWaitingArray[this.floorNumber]);
+        return this.isWaitingArray[this.floorNumber];
     }
 
     public void setNumPass() {
@@ -54,7 +56,7 @@ public class Floor {
 *
 */
     public void waitForElevator() {
-        this.isWaiting[this.floorNumber - 1] = true;
+        this.isWaitingArray[this.floorNumber] = true;
     }
 
 }
