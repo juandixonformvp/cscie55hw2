@@ -12,7 +12,7 @@ public class myTest {
             Building building = new Building();
             Elevator elevator = building.getElevator();
 
-            int expectedFloorNumber = 1;
+            // int expectedFloorNumber = 1;
             try {
                 elevator.boardPassenger(6);
             }

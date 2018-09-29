@@ -36,7 +36,7 @@ public class Floor {
     }
 
     public void clearNumPass() {
-        this.numPass = 0;
+        this.numPass = 9;
     }
 
     public int getNumPass() {

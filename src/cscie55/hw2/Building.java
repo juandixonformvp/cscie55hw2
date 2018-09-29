@@ -39,7 +39,7 @@ public class Building {
     public int getTotalPass() {
         int tempSum = 0;
         for (Floor tempFloor : allFloors) {
-            tempSum = tempSum + tempFloor.getNumPass();
+            tempSum = tempSum + tempFloor.getNumPass(); 
         }
         return tempSum;
     }
