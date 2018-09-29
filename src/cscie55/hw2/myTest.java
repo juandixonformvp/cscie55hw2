@@ -14,7 +14,7 @@ public class myTest {
 
             // int expectedFloorNumber = 1;
             try {
-                elevator.boardPassenger(6);
+                elevator.boardPassenger(3);
             }
             catch(ElevatorFullException e) {
                 elevator.move();
@@ -27,20 +27,22 @@ public class myTest {
             }
             elevator.move();
             elevator.move();
-            try {
-                elevator.boardPassenger(6);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
             elevator.move();
             elevator.move();
-            try {
-                elevator.boardPassenger(5);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
+            // try {
+            //     elevator.boardPassenger(6);
+            // }
+            // catch(ElevatorFullException e) {
+            //     elevator.move();
+            // }
+            // elevator.move();
+            // elevator.move();
+            // try {
+            //     elevator.boardPassenger(5);
+            // }
+            // catch(ElevatorFullException e) {
+            //     elevator.move();
+            // }
             
             // try {
             //     elevator.boardPassenger(4);

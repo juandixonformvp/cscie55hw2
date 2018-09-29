@@ -46,7 +46,7 @@ public class Elevator {
 */
     public void move() {
 
-        // myBuilding.getFloor(this.currentFloor).clearNumPass();
+        myBuilding.getFloor(this.currentFloor).clearNumPass();
 
         if (currentFloor == 1) {
             this.directionUp = true;
@@ -64,7 +64,7 @@ public class Elevator {
             this.currentFloor--;
         }
 
-        // System.out.println(this.toString());
+        System.out.println(this.toString());
 
     }
 
