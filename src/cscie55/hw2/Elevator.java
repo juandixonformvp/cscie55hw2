@@ -10,10 +10,9 @@ import java.io.IOException;
 
 public class Elevator {
 
-    /*private static final int FLOORS = 7;*/
     private static final int CAPACITY = 10;
     private int currentFloor;
-    private boolean direction;
+    private boolean directionUp;
     private int numPassDest[] = new int[FLOORS];
  
 /** Initializes the current floor, and direction.
@@ -25,7 +24,7 @@ public class Elevator {
 */
  public Elevator() {
         this.currentFloor = 1;
-        this.direction = true;
+        this.directionUp = true;
     }
 
 	
@@ -54,14 +53,14 @@ public class Elevator {
         System.out.println(this.toString());
 
         if (currentFloor == 1) {
-            this.direction = true;
+            this.directionUp = true;
         }    
 
         if (currentFloor == FLOORS) {
-            this.direction = false;
+            this.directionUp = false;
         }
 
-        if (direction == true) {
+        if (directionUp == true) {
             this.currentFloor++;
         }    
 

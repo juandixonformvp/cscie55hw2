@@ -10,9 +10,8 @@ import java.util.stream.*;
 public class Building {
 
     private static final int FLOORS = 7;
-    private int currentFloor;
-    private boolean direction;
-    private int numPassDest[] = new int[FLOORS];
+    private Elevator myElevator;
+    private int myFloor[] = new int[FLOORS];
  
 /** Initializes the current floor, and direction.
 * Class variables description - 
@@ -22,20 +21,20 @@ public class Building {
 * An array-valued field for tracking, each floor, and # passengers destined for that floor. 
 */
  public Building() {
-        this.currentFloor = 1;
+        this.myElevator = new Elevator();
         this.direction = true;
     }
 
 	
     public int getFloor(int floorNumber) {
 
-        return this.currentFloor;
+        return this.myFloor[floorNumber - 1];
 
     }
 	
     public Elevator getElevator() {
 
-        return IntStream.of(this.numPassDest).sum();
+        return this.myElevator;
 
     }
 
@@ -71,5 +70,5 @@ public class Building {
 
 
     }
-    
+
 }
