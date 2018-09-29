@@ -5,7 +5,6 @@ package cscie55.hw2;
 * The Elevator moves passengers between Floors
 ************************************************************/
 
-import java.util.stream.*;
 import java.io.IOException;
 
 public class Elevator {
@@ -79,9 +78,9 @@ public class Elevator {
 *
 */
 
-public void boardPassenger(int destinationFloorNumber) {
-    // this.numPassDest[destinationFloor - 1]++;
-}
+    public void boardPassenger(int destinationFloorNumber) {
+        myBuilding.myFloor[destinationFloorNumber - 1]++;
+    }
 
 /*
     public void boardPassenger(int destinationFloor) throws ElevatorFullException {
@@ -103,7 +102,7 @@ public void boardPassenger(int destinationFloorNumber) {
     }*/
 
     public String toString(){
-        return "Floor "+getCurrentFloor()+": "+getDirectionUp();
+        return "Floor "+getCurrentFloor()+" Dir: "+getDirectionUp()+" NumPass: "+myBuilding.getNumPass();
 
     }
 
