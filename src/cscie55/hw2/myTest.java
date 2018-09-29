@@ -12,22 +12,21 @@ public class myTest {
             Building building = new Building();
             Elevator elevator = building.getElevator();
 
-            
-            // building.getFloor(3).waitForElevator();
-            // building.getFloor(3).waitForElevator();
-            // building.getFloor(6).waitForElevator();
-            // building.getFloor(6).waitForElevator();
-            // building.getFloor(6).waitForElevator();
+            building.getFloor(3).waitForElevator();
+            building.getFloor(3).waitForElevator();
+            building.getFloor(6).waitForElevator();
+            building.getFloor(6).waitForElevator();
+            building.getFloor(6).waitForElevator();
             elevator.move();
-            // elevator.move();
-            // elevator.move();
-            // elevator.move();
-            // elevator.move();
-            // elevator.move();
-            // elevator.move();
-            // elevator.move();
-            // elevator.move();
-            // elevator.move();
+            elevator.move();
+            elevator.move();
+            elevator.move();
+            elevator.move();
+            elevator.move();
+            elevator.move();
+            elevator.move();
+            elevator.move();
+            elevator.move();
 
             // try {
             //     elevator.boardPassenger(3);

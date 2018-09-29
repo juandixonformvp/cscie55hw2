@@ -47,17 +47,15 @@ public class Elevator {
     public void move() {
 
         myBuilding.getFloor(this.currentFloor).clearNumPass();
-        System.out.println("Current" + this.currentFloor);
-        System.out.println(myBuilding.getFloor(this.currentFloor).getIsWaitingArray());
 
-        // if(myBuilding.getFloor(this.currentFloor).getIsWaitingArray() == true) {
-        //     try {
-        //         this.boardPassenger(1);
-        //     }
-        //     catch(ElevatorFullException e) {
-        //         this.move();
-        //     }
-        // }
+        if(myBuilding.getFloor(this.currentFloor).getIsWaitingArray() == true) {
+            try {
+                this.boardPassenger(1);
+            }
+            catch(ElevatorFullException e) {
+                this.move();
+            }
+        }
 
         if (currentFloor == 1) {
             this.directionUp = true;
