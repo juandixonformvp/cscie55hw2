@@ -12,15 +12,16 @@ public class myTest {
             Building building = new Building();
             Elevator elevator = building.getElevator();
             int expectedFloorNumber = 1;
+            elevator.boardPassenger(6);
+            elevator.boardPassenger(6);
+            elevator.boardPassenger(6);
             elevator.move();
+            elevator.boardPassenger(4);
+            elevator.boardPassenger(4);
             elevator.move();
             elevator.move();
             elevator.boardPassenger(3);
-            elevator.boardPassenger(4);
-            elevator.boardPassenger(4);
-            elevator.boardPassenger(6);
-            elevator.boardPassenger(6);
-            elevator.boardPassenger(6);
+           
             elevator.move();
             elevator.move();
             elevator.move();
