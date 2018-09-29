@@ -22,11 +22,11 @@ public class Floor {
 */
     public Floor(Building building, int floorNumber) {
         this.numPass = 0;
-        this.floorNumber = floorNumber;
+        this.floorNumber = floorNumber + 1; // add 1 because it is initialized by an index to an array
     }
 
     public int getPassengersWaiting() {
-        return this.isWaitingArray[this.floorNumber];
+        return this.isWaitingArray[this.floorNumber - 1];
     }
 
     public void setNumPass() {
@@ -38,7 +38,7 @@ public class Floor {
     }
     
     public void clearIsWaitingArray() {
-        this.isWaitingArray[this.floorNumber] = 0;
+        this.isWaitingArray[this.floorNumber - 1] = 0;
     }
 
     public int getNumPass() {
@@ -58,7 +58,7 @@ public class Floor {
 *
 */
     public void waitForElevator() {
-        this.isWaitingArray[this.floorNumber]++;
+        this.isWaitingArray[this.floorNumber - 1]++;
     }
 
 }
