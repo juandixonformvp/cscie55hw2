@@ -97,10 +97,17 @@ public class Elevator {
         }
     }
 
-    public String toString(){
-        return "Floor "+getCurrentFloor()+" Dir: "+getDirectionUp()+" NumPass: "+myBuilding.getPassengers();
-
+    public int getPassengers() {
+        int tempSum = 0;
+        for (Floor tempFloor : myBuilding.allFloorsArray) {
+            tempSum = tempSum + tempFloor.getNumPass(); 
+        }
+        return tempSum;
     }
 
+    public String toString(){
+        return "Floor "+getCurrentFloor()+" Dir: "+getDirectionUp()+" NumPass: "+getPassengers();
+
+    }
 
 }

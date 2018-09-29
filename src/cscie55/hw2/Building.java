@@ -36,13 +36,13 @@ public class Building {
         return this.myElevator;
     }
 
-    public int getPassengers() {
-        int tempSum = 0;
-        for (Floor tempFloor : allFloorsArray) {
-            tempSum = tempSum + tempFloor.getNumPass(); 
-        }
-        return tempSum;
-    }
+    // public int getPassengers() {
+    //     int tempSum = 0;
+    //     for (Floor tempFloor : allFloorsArray) {
+    //         tempSum = tempSum + tempFloor.getNumPass(); 
+    //     }
+    //     return tempSum;
+    // }
 
 /**
 * The "move" method increments/decrements the current floor. 

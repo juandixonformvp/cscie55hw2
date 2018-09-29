@@ -25,7 +25,7 @@ public class Floor {
         this.floorNumber = floorNumber;
     }
 
-    public int getIsWaitingArray() {
+    public int getPassengersWaiting() {
         return this.isWaitingArray[this.floorNumber];
     }
 
