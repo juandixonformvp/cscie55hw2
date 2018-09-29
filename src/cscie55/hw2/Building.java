@@ -22,7 +22,7 @@ public class Building {
 */
  public Building() {
         this.myElevator = new Elevator(this);
-        for (int i = 0; i < this.allFloors.length; i++) {
+        for (int i = 0; i < FLOORS; i++) {
             allFloors[i] = new Floor(this, i); 
         }
     }
@@ -39,6 +39,7 @@ public class Building {
     public int getTotalPass() {
         int tempSum = 0;
         for (Floor tempFloor : allFloors) {
+            System.out.println("Each floor" + tempFloor.getNumPass());
             tempSum = tempSum + tempFloor.getNumPass(); 
         }
         return tempSum;
