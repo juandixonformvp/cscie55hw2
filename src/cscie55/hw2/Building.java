@@ -46,29 +46,5 @@ public class Building {
 * Prints out the status of the Elevator.
 *
 */
-    public void move() {
-
-        System.out.println(this.toString());
-
-        if (currentFloor == 1) {
-            this.direction = true;
-        }    
-
-        if (currentFloor == FLOORS) {
-            this.direction = false;
-        }
-
-        if (direction == true) {
-            this.currentFloor++;
-        }    
-
-        else {
-            this.currentFloor--;
-        }
-
-        this.numPassDest[currentFloor - 1] = 0;
-
-
-    }
 
 }

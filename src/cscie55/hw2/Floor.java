@@ -13,8 +13,6 @@ public class Floor {
     private static final int CAPACITY = 10;
     private int currentFloor;
     private int numWaiting;
-    private boolean direction;
-    private int numPassDest[] = new int[FLOORS];
  
 /** Initializes the current floor, and direction.
 * Class variables description - 
@@ -23,22 +21,15 @@ public class Floor {
 * A field for tracking the Elevator's direction of travel.
 * An array-valued field for tracking, each floor, and # passengers destined for that floor. 
 */
- public Floor() {
-        this.currentFloor = 1;
+ public Floor(Building building, int floorNumber) {
+        this.currentFloor = floorNumber;
         this.numWaiting = 0;
-        this.direction = true;
     }
 
 	
     public int getPassengersWaiting() {
 
-        return this.currentFloor;
-
-    }
-	
-    public int getNumPass() {
-
-        return IntStream.of(this.numPassDest).sum();
+        return this.numWaiting;
 
     }
 
@@ -51,26 +42,6 @@ public class Floor {
 *
 */
     public void waitForElevator() {
-
-        System.out.println(this.toString());
-
-        if (currentFloor == 1) {
-            this.direction = true;
-        }    
-
-        if (currentFloor == FLOORS) {
-            this.direction = false;
-        }
-
-        if (direction == true) {
-            this.currentFloor++;
-        }    
-
-        else {
-            this.currentFloor--;
-        }
-
-        this.numPassDest[currentFloor - 1] = 0;
 
 
     }
