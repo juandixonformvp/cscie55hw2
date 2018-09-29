@@ -36,21 +36,4 @@ public class Building {
         return this.myElevator;
     }
 
-    // public int getPassengers() {
-    //     int tempSum = 0;
-    //     for (Floor tempFloor : allFloorsArray) {
-    //         tempSum = tempSum + tempFloor.getNumPass(); 
-    //     }
-    //     return tempSum;
-    // }
-
-/**
-* The "move" method increments/decrements the current floor. 
-* The Elevator moves one floor at a time.
-* Modifies the direction of travel, if the ground floor or top floor has been reached.
-* Clears the array entry tracking the number of passengers destined for the floor.
-* Prints out the status of the Elevator.
-*
-*/
-
 }
