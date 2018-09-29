@@ -89,7 +89,7 @@ public class Elevator {
 */
 
     public void boardPassenger(int destinationFloorNumber) throws ElevatorFullException {
-        if(myBuilding.getPassengers() >= CAPACITY) {
+        if(this.getPassengers() >= CAPACITY) {
             throw new ElevatorFullException("Elevator is at full capacity. Please wait for the elevator to return.");
         }
         else {

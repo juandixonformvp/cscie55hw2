@@ -1,4 +1,3 @@
-./cscie55/hw2test/ElevatorTest.java
 ./cscie55/hw2/myTest.java
 ./cscie55/hw2/Elevator.java
 ./cscie55/hw2/ElevatorFullException.java
