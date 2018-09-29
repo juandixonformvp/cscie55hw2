@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Elevator {
 
-    private static final int CAPACITY = 10;
+    public static final int CAPACITY = 10;
     private int currentFloor;
     private boolean directionUp;
     private Building myBuilding;
@@ -48,7 +48,7 @@ public class Elevator {
 
         myBuilding.getFloor(this.currentFloor).clearNumPass();
 
-        int numWaitingOnFloor = myBuilding.getFloor(this.currentFloor).getIsWaitingArray();
+        int numWaitingOnFloor = myBuilding.getFloor(this.currentFloor).getPassengersWaiting();
 
         if(numWaitingOnFloor > 0) {     //loop to board the persons waiting on a floor 
             for (int i = 0; i < numWaitingOnFloor; i++) {
@@ -89,7 +89,7 @@ public class Elevator {
 */
 
     public void boardPassenger(int destinationFloorNumber) throws ElevatorFullException {
-        if(myBuilding.getTotalPass() >= CAPACITY) {
+        if(myBuilding.getPassengers() >= CAPACITY) {
             throw new ElevatorFullException("Elevator is at full capacity. Please wait for the elevator to return.");
         }
         else {
@@ -98,7 +98,7 @@ public class Elevator {
     }
 
     public String toString(){
-        return "Floor "+getCurrentFloor()+" Dir: "+getDirectionUp()+" NumPass: "+myBuilding.getTotalPass();
+        return "Floor "+getCurrentFloor()+" Dir: "+getDirectionUp()+" NumPass: "+myBuilding.getPassengers();
 
     }
 
