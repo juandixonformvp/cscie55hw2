@@ -11,154 +11,158 @@ public class myTest {
             System.out.println("testing");
             Building building = new Building();
             Elevator elevator = building.getElevator();
-            int expectedFloorNumber = 1;
-            try {
-                elevator.boardPassenger(6);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(6);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(6);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            elevator.move();
-            elevator.move();
-            try {
-                elevator.boardPassenger(3);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            elevator.move();
-            elevator.move();
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            try {
-                elevator.boardPassenger(4);
-            }
-            catch(ElevatorFullException e) {
-                elevator.move();
-            }
-            elevator.move();
-            elevator.move();
-            elevator.move();
-            elevator.move();
-            elevator.move();
-            elevator.move();
-            elevator.move();
-            elevator.move();
-            elevator.move();
-            elevator.move();
-            
+            building.getFloor(1).setNumPass(1);
         }
+
+
+        //     int expectedFloorNumber = 1;
+        //     try {
+        //         elevator.boardPassenger(6);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(6);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(6);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     elevator.move();
+        //     elevator.move();
+        //     try {
+        //         elevator.boardPassenger(3);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     elevator.move();
+        //     elevator.move();
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     try {
+        //         elevator.boardPassenger(4);
+        //     }
+        //     catch(ElevatorFullException e) {
+        //         elevator.move();
+        //     }
+        //     elevator.move();
+        //     elevator.move();
+        //     elevator.move();
+        //     elevator.move();
+        //     elevator.move();
+        //     elevator.move();
+        //     elevator.move();
+        //     elevator.move();
+        //     elevator.move();
+        //     elevator.move();
+            
+        // }
         
     }

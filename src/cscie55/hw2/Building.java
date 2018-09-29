@@ -11,7 +11,7 @@ public class Building {
 
     public static final int FLOORS = 7;
     public Elevator myElevator;
-    public int myFloor[] = new int[FLOORS];
+    public Floor allFloors[] = new Floor[FLOORS];
  
 /** Initializes the current floor, and direction.
 * Class variables description - 
@@ -25,16 +25,20 @@ public class Building {
     }
 
 	
-    public int getFloor(int floorNumber) {
-        return this.myFloor[floorNumber - 1];
+    public Floor getFloor(int floorNumber) {
+        return this.allFloors[floorNumber - 1];
     }
 	
     public Elevator getElevator() {
         return this.myElevator;
     }
 
-    public int getNumPass() {
-        return IntStream.of(this.myFloor).sum();
+    public int getTotalPass() {
+        int tempSum = 0;
+        for (Floor tempFloor : allFloors) {
+            tempSum = tempSum + tempFloor.getNumPass();
+        }
+        return tempSum;
     }
 
 /**

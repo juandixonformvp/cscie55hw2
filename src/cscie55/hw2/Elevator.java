@@ -35,10 +35,6 @@ public class Elevator {
     public boolean getDirectionUp() {
         return this.directionUp;
     }
-	
-    /*public int getNumPass() {
-        return IntStream.of(this.myBuilding.myfloor()).sum();
-    }*/
 
 /**
 * The "move" method increments/decrements the current floor. 
@@ -50,7 +46,7 @@ public class Elevator {
 */
     public void move() {
 
-        myBuilding.myFloor[currentFloor - 1] = 0;
+        myBuilding.getFloor(this.currentFloor).setNumPass(0);
 
         if (currentFloor == 1) {
             this.directionUp = true;
@@ -78,35 +74,16 @@ public class Elevator {
 */
 
     public void boardPassenger(int destinationFloorNumber) throws ElevatorFullException {
-        if(myBuilding.getNumPass() >= CAPACITY) {
+        if(myBuilding.getTotalPass() >= CAPACITY) {
             throw new ElevatorFullException("Elevator is at full capacity. Please wait for the elevator to return.");
         }
         else {
-            myBuilding.myFloor[destinationFloorNumber - 1]++;
+            myBuilding.getFloor(this.currentFloor).setNumPass(1);
         }
     }
 
-/*
-    public void boardPassenger(int destinationFloor) throws ElevatorFullException {
-        try 
-            List<String> lines = Files.readAllLines(filePath, charset);
-
-            for (String line : lines) {
-                System.out.println(line);
-            }
-        }
-        catch (IOException e) {
-            System.out.println(e);
-            throw new ElevatorFullException("My Cephalopod... He's Gone!", e.getCause());
-       }
-       finally{
-          // this block ALWAYS fires, with or w/o an exception.
-          System.out.println("Ultimately, it is a thing accomplished!");
-       }    
-    }*/
-
     public String toString(){
-        return "Floor "+getCurrentFloor()+" Dir: "+getDirectionUp()+" NumPass: "+myBuilding.getNumPass();
+        return "Floor "+getCurrentFloor()+" Dir: "+getDirectionUp()+" NumPass: "+myBuilding.getTotalPass();
 
     }
 
