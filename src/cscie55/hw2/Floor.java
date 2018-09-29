@@ -9,8 +9,6 @@ import java.util.stream.*;
 
 public class Floor {
 
-    /*private static final int FLOORS = 7;*/
-    private static final int CAPACITY = 10;
     private int currentFloor;
     private int numWaiting;
  

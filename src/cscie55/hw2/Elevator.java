@@ -56,7 +56,7 @@ public class Elevator {
             this.directionUp = true;
         }    
 
-        if (currentFloor == myBuilding.FLOORS) {
+        if (currentFloor == Building.FLOORS) {
             this.directionUp = false;
         }
 
