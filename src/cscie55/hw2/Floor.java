@@ -9,9 +9,9 @@ import java.util.stream.*;
 
 public class Floor {
 
-    public int currentFloor;
     public int numWaiting;
     public int numPass;
+    public int floorNumber;
  
 /** Initializes the current floor, and direction.
 * Class variables description - 
@@ -21,9 +21,9 @@ public class Floor {
 * An array-valued field for tracking, each floor, and # passengers destined for that floor. 
 */
  public Floor(Building building, int floorNumber) {
-        this.currentFloor = floorNumber;
         this.numWaiting = 0;
         this.numPass = 0;
+        this.floorNumber = floorNumber;
     }
 
 	
@@ -31,12 +31,20 @@ public class Floor {
         return this.numWaiting;
     }
 
-    public int setNumPass(int numAddPass) {
-        return this.numPass + numAddPass;
+    public void setNumPass() {
+        this.numPass++;
+    }
+
+    public void clearNumPass() {
+        this.numPass = 0;
     }
 
     public int getNumPass() {
         return this.numPass;
+    }
+
+    public int getFloorNumber() {
+        return this.floorNumber;
     }
 
 /**

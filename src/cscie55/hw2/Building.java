@@ -22,6 +22,9 @@ public class Building {
 */
  public Building() {
         this.myElevator = new Elevator(this);
+        for (int i = 0; i < this.allFloors.length; i++) {
+            allFloors[i] = new Floor(this, i); 
+        }
     }
 
 	
