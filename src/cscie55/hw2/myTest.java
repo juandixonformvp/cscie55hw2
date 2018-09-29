@@ -27,6 +27,11 @@ public class myTest {
             elevator.move();
             elevator.move();
             elevator.move();
+            elevator.move();
+            elevator.move();
+            elevator.move();
+            elevator.move();
+            elevator.move();
 
             // try {
             //     elevator.boardPassenger(3);

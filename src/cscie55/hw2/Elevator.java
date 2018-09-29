@@ -48,14 +48,20 @@ public class Elevator {
 
         myBuilding.getFloor(this.currentFloor).clearNumPass();
 
-        if(myBuilding.getFloor(this.currentFloor).getIsWaitingArray() == true) {
-            try {
-                this.boardPassenger(1);
-            }
-            catch(ElevatorFullException e) {
-                this.move();
+        int numWaitingOnFloor = myBuilding.getFloor(this.currentFloor).getIsWaitingArray();
+
+        if(numWaitingOnFloor > 0) {     //loop to board the persons waiting on a floor 
+            for (int i = 0; i < numWaitingOnFloor; i++) {
+                try {
+                    this.boardPassenger(1);
+                }
+                catch(ElevatorFullException e) {
+                    this.move();
+                }
             }
         }
+
+        myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); //now that waiting persons have boarded, must clear the waiting array
 
         if (currentFloor == 1) {
             this.directionUp = true;
