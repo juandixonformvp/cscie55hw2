@@ -13,7 +13,7 @@ public class Elevator {
     private static final int CAPACITY = 10;
     private int currentFloor;
     private boolean directionUp;
-    private int numPassDest[] = new int[FLOORS];
+    private Building myBuilding;
  
 /** Initializes the current floor, and direction.
 * Class variables description - 
@@ -22,22 +22,19 @@ public class Elevator {
 * A field for tracking the Elevator's direction of travel.
 * An array-valued field for tracking, each floor, and # passengers destined for that floor. 
 */
- public Elevator() {
+ public Elevator(Building building) {
         this.currentFloor = 1;
         this.directionUp = true;
+        this.myBuilding = building;
     }
 
 	
     public int getCurrentFloor() {
-
         return this.currentFloor;
-
     }
 	
     public int getNumPass() {
-
-        return IntStream.of(this.numPassDest).sum();
-
+        return IntStream.of(this.myBuilding.myfloor()).sum();
     }
 
 /**
@@ -77,6 +74,12 @@ public class Elevator {
 * The "boardPassenger" method adds to the Elevator one passenger destined for the indicated floor.
 *
 */
+
+public void boardPassenger(int destinationFloorNumber) {
+    this.numPassDest[destinationFloor - 1]++;
+}
+
+/*
     public void boardPassenger(int destinationFloor) throws ElevatorFullException {
         try {
             List<String> lines = Files.readAllLines(filePath, charset);
@@ -93,7 +96,7 @@ public class Elevator {
           // this block ALWAYS fires, with or w/o an exception.
           System.out.println("Ultimately, it is a thing accomplished!");
        }    
-    }
+    }*/
 
     public String toString(){
         return "[Floor "+getCurrentFloor()+": "+getNumPass()+" passengers]";
