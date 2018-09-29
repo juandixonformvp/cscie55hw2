@@ -64,9 +64,10 @@ public class Elevator {
                     this.move();
                 }
             }
+            myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); //now that waiting persons have boarded, must clear the waiting array
         }
 
-        myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); //now that waiting persons have boarded, must clear the waiting array
+        
 
         if (currentFloor == 1) {
             this.directionUp = true;
