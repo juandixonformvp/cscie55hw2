@@ -50,12 +50,12 @@ public class Elevator {
 
         int numWaitingOnFloor = myBuilding.getFloor(this.currentFloor).getPassengersWaiting();
 
-        if(numWaitingOnFloor > 0) {     //loop to board the persons waiting on a floor 
+        if(numWaitingOnFloor > 0 && this.getPassengers() < CAPACITY) {     //loop to board the persons waiting on a floor 
             for (int i = 0; i < numWaitingOnFloor; i++) {
                 try {
-                    if (this.currentFloor == 1) {   // instructions state waiting passengers on
-                        this.boardPassenger(7);     // first floor go to higher floor
-                    }                               // but everyone else goes to floor 1.
+                    if (this.currentFloor == 1) {               // instructions state waiting passengers on
+                        this.boardPassenger(Building.FLOORS);   // first floor go to higher floor
+                    }                                           // but everyone else goes to floor 1.
                     else {
                         this.boardPassenger(1);
                     }
