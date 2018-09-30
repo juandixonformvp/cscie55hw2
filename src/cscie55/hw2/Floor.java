@@ -15,10 +15,9 @@ public class Floor {
  
 /** Initializes the current floor, and direction.
 * Class variables description - 
-* A constant, (i.e., a static final field), for the number of floors in the building.
-* A field for tracking the Elevator's current floor. 
-* A field for tracking the Elevator's direction of travel.
-* An array-valued field for tracking, each floor, and # passengers destined for that floor. 
+* Number of passengers on the floor.
+* The Floor number (cannot be zero). 
+* An array for tracking the number of people waiting on the floor.
 */
     public Floor(Building building, int floorNumber) {
         this.numPass = 0;
@@ -37,7 +36,7 @@ public class Floor {
         this.numPass = 0;
     }
     
-    public void clearIsWaitingArray() {
+    public void clearIsWaitingArray() {     // as waiting passengers board, it is necessary to decrement the isWaitingArray
         this.isWaitingArray[this.myFloorNumber - 1]--;
     }
 
@@ -50,11 +49,8 @@ public class Floor {
     }
 
 /**
-* The "move" method increments/decrements the current floor. 
-* The Elevator moves one floor at a time.
-* Modifies the direction of travel, if the ground floor or top floor has been reached.
-* Clears the array entry tracking the number of passengers destined for the floor.
-* Prints out the status of the Elevator.
+* This method basically "summons" the elevator. 
+* Increments the isWaitingArray.
 *
 */
     public void waitForElevator() {

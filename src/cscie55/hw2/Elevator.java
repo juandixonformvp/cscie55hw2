@@ -16,10 +16,9 @@ public class Elevator {
  
 /** Initializes the current floor, and direction.
 * Class variables description - 
-* A constant, (i.e., a static final field), for the number of floors in the building.
 * A field for tracking the Elevator's current floor. 
 * A field for tracking the Elevator's direction of travel.
-* An array-valued field for tracking, each floor, and # passengers destined for that floor. 
+* A field for tracking the Building instance. 
 */
  public Elevator(Building building) {
         this.currentFloor = 1;
@@ -27,7 +26,6 @@ public class Elevator {
         this.myBuilding = building;
     }
 
-	
     public int getCurrentFloor() {
         return this.currentFloor;
     }
@@ -37,10 +35,10 @@ public class Elevator {
     }
 
 /**
-* The "move" method increments/decrements the current floor. 
-* The Elevator moves one floor at a time.
+* The "move" method increments/decrements the current floor.
 * Modifies the direction of travel, if the ground floor or top floor has been reached.
 * Clears the array entry tracking the number of passengers destined for the floor.
+* Checks to see if there are passengers waiting on the current floor and boards them.
 * Prints out the status of the Elevator.
 *
 */
@@ -50,16 +48,16 @@ public class Elevator {
 
         int numWaitingOnFloor = myBuilding.getFloor(this.currentFloor).getPassengersWaiting();
         int spareCapacity = CAPACITY - this.getPassengers();
-        int numToBoard = Math.min(spareCapacity, numWaitingOnFloor);
-        if(numWaitingOnFloor > 0 && this.getPassengers() < CAPACITY) {     // loop to board the persons waiting on a floor 
-            for (int i = 0; i < numToBoard; i++) {   // will only board waiting people up to the capacity limit
+        int numToBoard = Math.min(spareCapacity, numWaitingOnFloor);    // will board the number of people of waiting, or the spare capacity, whichever is the lesser value
+        if(numWaitingOnFloor > 0 && this.getPassengers() < CAPACITY) {  // loop to board the persons waiting on a floor 
+            for (int i = 0; i < numToBoard; i++) {                      // will only board waiting people up to the capacity limit
                 try {
-                    if (this.currentFloor == 1) {               // instructions state waiting passengers on
-                        this.boardPassenger(Building.FLOORS);   // first floor go to higher floor
+                    if (this.currentFloor == 1) {                       // instructions state waiting passengers on
+                        this.boardPassenger(Building.FLOORS);           // first floor go to higher floor
                         myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); // for each person boarded, decrement waiting array   
                     }                                           
                     else {
-                        this.boardPassenger(1);                 // people waiting on higher floors go to floor 1.
+                        this.boardPassenger(1);                         // people waiting on higher floors go to floor 1.
                         myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); // for each person boarded, decrement waiting array  
                     }
                 }
@@ -70,8 +68,7 @@ public class Elevator {
             
         }
 
-        
-
+        // Next block of code is unchanged from HW1, basic move functionality
         if (currentFloor == 1) {
             this.directionUp = true;
         }    
@@ -96,7 +93,6 @@ public class Elevator {
 * The "boardPassenger" method adds to the Elevator one passenger destined for the indicated floor.
 *
 */
-
     public void boardPassenger(int destinationFloorNumber) throws ElevatorFullException {
         if(this.getPassengers() >= CAPACITY) {
             myBuilding.getFloor(this.currentFloor).waitForElevator(); // passengers who can't board because of full capacity get placed in the wait for elevator queue
@@ -107,6 +103,10 @@ public class Elevator {
         }
     }
 
+/**
+* The "getPassengers" method returns the total number of persons currently in the elevator.
+*
+*/    
     public int getPassengers() {
         int tempSum = 0;
         for (Floor tempFloor : myBuilding.allFloorsArray) {

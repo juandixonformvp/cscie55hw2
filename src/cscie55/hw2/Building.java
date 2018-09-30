@@ -13,21 +13,19 @@ public class Building {
     public Elevator myElevator;
     public Floor allFloorsArray[] = new Floor[FLOORS];
  
-/** Initializes the current floor, and direction.
+/** Initializes an array of "Floor" instances
 * Class variables description - 
 * A constant, (i.e., a static final field), for the number of floors in the building.
-* A field for tracking the Elevator's current floor. 
-* A field for tracking the Elevator's direction of travel.
-* An array-valued field for tracking, each floor, and # passengers destined for that floor. 
+* An Elevator instance
+* An array that contains "Floor" instances 
 */
  public Building() {
         this.myElevator = new Elevator(this);
         for (int i = 0; i < FLOORS; i++) {
-            allFloorsArray[i] = new Floor(this, i); 
+            allFloorsArray[i] = new Floor(this, i); // note that floor can be zero
         }
     }
 
-	
     public Floor getFloor(int floorNumber) {
         return this.allFloorsArray[floorNumber - 1];
     }
