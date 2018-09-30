@@ -43,31 +43,9 @@ public class Elevator {
 *
 */
     public void move() {
-
-        System.out.println(this.toString());    // checks status of elevator after boarding and before moving
-
-        // Next block of code is unchanged from HW1, basic move functionality
-        if (currentFloor == 1) {
-            this.directionUp = true;
-        }    
-
-        if (currentFloor == Building.FLOORS) {
-            this.directionUp = false;
-        }
-
-        if (directionUp == true) {
-            this.currentFloor++;
-        }    
-
-        else {
-            this.currentFloor--;
-        }
-
+         
         myBuilding.getFloor(this.currentFloor).clearNumPass();  // empties passengers who should get off on current floor
         int numWaitingOnFloor = myBuilding.getFloor(this.currentFloor).getPassengersWaiting(); // counts number of waiting passengers
-        int spareCapacity = CAPACITY - this.getPassengers();    // calculates the spare capacity in the elevator
-
-        int numToBoard = Math.min(spareCapacity, numWaitingOnFloor);    // will board the number of people of waiting, or the spare capacity, whichever is the lesser value
         if(numWaitingOnFloor > 0 && this.getPassengers() < CAPACITY) {  // loop to board the persons waiting on a floor 
             for (int i = 0; i < numWaitingOnFloor; i++) {               // will only board waiting people up to the capacity limit
                 try {
@@ -85,6 +63,27 @@ public class Elevator {
                 }
             }   
         }
+
+        System.out.println("Before move: "+this.toString());    // checks status of elevator after boarding and before moving on
+        // Next block of code is unchanged from HW1, basic move functionality
+        if (currentFloor == 1) {
+            this.directionUp = true;
+        }    
+
+        if (currentFloor == Building.FLOORS) {
+            this.directionUp = false;
+        }
+
+        if (directionUp == true) {
+            this.currentFloor++;
+        }    
+
+        else {
+            this.currentFloor--;
+        }
+
+        
+        System.out.println("After move: "+this.toString());    // checks status of elevator after moving on
     }
 
 /**
