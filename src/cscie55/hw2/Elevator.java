@@ -48,18 +48,23 @@ public class Elevator {
 
         int numWaitingOnFloor = myBuilding.getFloor(this.currentFloor).getPassengersWaiting();
         int spareCapacity = CAPACITY - this.getPassengers();
+        // System.out.println("Num Waiting: " + numWaitingOnFloor + " Spare: " + spareCapacity + " Num inside: " + this.getPassengers());
         int numToBoard = Math.min(spareCapacity, numWaitingOnFloor);    // will board the number of people of waiting, or the spare capacity, whichever is the lesser value
         if(numWaitingOnFloor > 0 && this.getPassengers() < CAPACITY) {  // loop to board the persons waiting on a floor 
-            for (int i = 0; i < numToBoard; i++) {                      // will only board waiting people up to the capacity limit
+            // System.out.println("Inside for loop");
+            for (int i = 0; i <= numToBoard; i++) {                      // will only board waiting people up to the capacity limit
                 try {
                     if (this.currentFloor == 1) {                       // instructions state waiting passengers on
                         this.boardPassenger(Building.FLOORS);           // first floor go to higher floor
                         myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); // for each person boarded, decrement waiting array   
+                        // System.out.println("Inside Try Block");
                     }                                           
                     else {
+                        // System.out.println("Inside else " + this.getPassengers());
                         this.boardPassenger(1);                         // people waiting on higher floors go to floor 1.
                         myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); // for each person boarded, decrement waiting array  
                     }
+                    // System.out.println("Exit else " + this.getPassengers());
                 }
                 catch(ElevatorFullException e) {
                     this.move();
@@ -96,6 +101,7 @@ public class Elevator {
     public void boardPassenger(int destinationFloorNumber) throws ElevatorFullException {
         if(this.getPassengers() >= CAPACITY) {
             myBuilding.getFloor(this.currentFloor).waitForElevator(); // passengers who can't board because of full capacity get placed in the wait for elevator queue
+            // System.out.println("Inside Exception");
             throw new ElevatorFullException("Elevator is at full capacity. Please wait for the elevator to return.");
         }
         else {
@@ -116,7 +122,7 @@ public class Elevator {
     }
 
     public String toString(){
-        return "Floor "+getCurrentFloor()+" Dir: "+getDirectionUp()+" NumPass: "+getPassengers();
+        return "Floor: "+getCurrentFloor()+" Dir: "+getDirectionUp()+" NumPass: "+getPassengers();
 
     }
 
