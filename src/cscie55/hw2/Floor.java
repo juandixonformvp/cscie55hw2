@@ -28,23 +28,23 @@ public class Floor {
         return this.isWaitingArray[this.myFloorNumber - 1];
     }
 
-    public void setNumPass() {
+    protected void setNumPass() {
         this.numPass++;
     }
 
-    public void clearNumPass() {
+    protected void clearNumPass() {
         this.numPass = 0;
     }
     
-    public void clearIsWaitingArray() {     // as waiting passengers board, it is necessary to decrement the isWaitingArray
+    protected void clearIsWaitingArray() {     // as waiting passengers board, it is necessary to decrement the isWaitingArray
         this.isWaitingArray[this.myFloorNumber - 1]--;
     }
 
-    public int getNumPass() {
+    protected int getNumPass() {
         return this.numPass;
     }
 
-    public int getFloorNumber() {
+    protected int getFloorNumber() {
         return this.myFloorNumber;
     }
 
