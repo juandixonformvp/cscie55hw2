@@ -11,7 +11,7 @@ public class Floor {
 
     public int isWaitingArray[] = new int[Building.FLOORS];
     public int numPass;
-    public int floorNumber;
+    public int myFloorNumber;
  
 /** Initializes the current floor, and direction.
 * Class variables description - 
@@ -22,11 +22,11 @@ public class Floor {
 */
     public Floor(Building building, int floorNumber) {
         this.numPass = 0;
-        this.floorNumber = floorNumber + 1; // add 1 because it is initialized by an index to an array
+        this.myFloorNumber = floorNumber + 1; // add 1 because it is initialized by an index to an array
     }
 
     public int getPassengersWaiting() {
-        return this.isWaitingArray[this.floorNumber - 1];
+        return this.isWaitingArray[this.myFloorNumber - 1];
     }
 
     public void setNumPass() {
@@ -38,7 +38,7 @@ public class Floor {
     }
     
     public void clearIsWaitingArray() {
-        this.isWaitingArray[this.floorNumber - 1] = 0;
+        this.isWaitingArray[this.myFloorNumber - 1]--;
     }
 
     public int getNumPass() {
@@ -46,7 +46,7 @@ public class Floor {
     }
 
     public int getFloorNumber() {
-        return this.floorNumber;
+        return this.myFloorNumber;
     }
 
 /**
@@ -58,7 +58,7 @@ public class Floor {
 *
 */
     public void waitForElevator() {
-        this.isWaitingArray[this.floorNumber - 1]++;
+        this.isWaitingArray[this.myFloorNumber - 1]++;
     }
 
 }
