@@ -68,6 +68,8 @@ public class Elevator {
             
         }
 
+        System.out.println(this.toString());
+
         // Next block of code is unchanged from HW1, basic move functionality
         if (currentFloor == 1) {
             this.directionUp = true;
@@ -84,8 +86,6 @@ public class Elevator {
         else {
             this.currentFloor--;
         }
-
-        System.out.println(this.toString());
 
     }
 
