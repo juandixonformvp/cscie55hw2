@@ -49,26 +49,26 @@ public class Elevator {
         myBuilding.getFloor(this.currentFloor).clearNumPass();
 
         int numWaitingOnFloor = myBuilding.getFloor(this.currentFloor).getPassengersWaiting();
-        System.out.println("Waiting " + numWaitingOnFloor);
+        // System.out.println("Waiting " + numWaitingOnFloor);
         // System.out.println("Waiting on Floor 1 " + myBuilding.getFloor(1).getPassengersWaiting());
         int spareCapacity = CAPACITY - this.getPassengers();
         int numToBoard = Math.min(spareCapacity, numWaitingOnFloor);
-        System.out.println("Board this many " + spareCapacity);
+        // System.out.println("Board this many " + numToBoard);
         if(numWaitingOnFloor > 0 && this.getPassengers() < CAPACITY) {     // loop to board the persons waiting on a floor 
-            System.out.println("inside catch");
+            // System.out.println("inside catch");
             for (int i = 0; i < numToBoard; i++) {   // will only board waiting people up to the capacity limit
                 // System.out.println(i);
                 try {
-                    // if (this.currentFloor == 1) {               // instructions state waiting passengers on
-                    //     this.boardPassenger(Building.FLOORS);   // first floor go to higher floor
-                    //     myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); // for each person boarded, decrement waiting array   
-                    // }                                           
-                    // else {
-                    //     this.boardPassenger(1);                 // people waiting on higher floors go to floor 1.
-                    //     myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); // for each person boarded, decrement waiting array  
-                    // }
-                    this.boardPassenger(1);
-                    myBuilding.getFloor(this.currentFloor).clearIsWaitingArray();
+                    if (this.currentFloor == 1) {               // instructions state waiting passengers on
+                        this.boardPassenger(Building.FLOORS);   // first floor go to higher floor
+                        myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); // for each person boarded, decrement waiting array   
+                    }                                           
+                    else {
+                        this.boardPassenger(1);                 // people waiting on higher floors go to floor 1.
+                        myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); // for each person boarded, decrement waiting array  
+                    }
+                    // this.boardPassenger(1);
+                    // myBuilding.getFloor(this.currentFloor).clearIsWaitingArray();
                 }
                 catch(ElevatorFullException e) {
                     this.move();

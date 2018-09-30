@@ -54,6 +54,9 @@ public class myTest {
             elevator.move();
             elevator.move();
             elevator.move();
+            elevator.move();
+            elevator.move();
+            elevator.move();
 
 
 
