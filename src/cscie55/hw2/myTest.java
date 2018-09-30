@@ -27,6 +27,9 @@ public class myTest {
             building.getFloor(4).waitForElevator();
             building.getFloor(4).waitForElevator();
             building.getFloor(4).waitForElevator();
+            building.getFloor(4).waitForElevator();
+            building.getFloor(4).waitForElevator();
+            building.getFloor(4).waitForElevator();
             elevator.move();
             elevator.move();
             elevator.move();
