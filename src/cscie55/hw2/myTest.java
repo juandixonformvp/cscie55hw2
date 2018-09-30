@@ -78,59 +78,59 @@ public class myTest {
         // System.out.println("End Checking Disembark");
     
 
-    // // Check that passengers on higher floors can call and board the elevator, and then
-    // // disembark on the ground floor.
-    //     Building building = new Building();
-    //     Elevator elevator = building.getElevator();
-    //     System.out.println("Checking higher floors can call and board");
-    //     building.getFloor(3).waitForElevator();
-    //     building.getFloor(3).waitForElevator();
-    //     building.getFloor(6).waitForElevator();
-    //     building.getFloor(6).waitForElevator();
-    //     building.getFloor(6).waitForElevator();
-    //     elevator.move();
-    //     elevator.move();
-    //     elevator.move();
-    //     elevator.move();
-    //     elevator.move();
-    //     elevator.move();
-    //     elevator.move();
-    //     elevator.move();
-    //     elevator.move();
-    //     elevator.move();
-    //     elevator.move();
-    //     elevator.move();
-    //     System.out.println("End checking higher floors can call and board");
-
-    // Check handling of a full elevator.
+    // Check that passengers on higher floors can call and board the elevator, and then
+    // disembark on the ground floor.
         Building building = new Building();
         Elevator elevator = building.getElevator();
-        // Have enough people waiting on the 4th floor to exceed elevator capacity by 50%
-        System.out.println("Checking 4th Full");
-        int waiting = (int) (Elevator.CAPACITY * 1.5);
-        for (int i = 0; i < waiting; i++) {
-            building.getFloor(4).waitForElevator();
-        }
-        // Move to 4, checking state
+        System.out.println("Checking higher floors can call and board");
+        building.getFloor(3).waitForElevator();
+        building.getFloor(3).waitForElevator();
+        building.getFloor(6).waitForElevator();
+        building.getFloor(6).waitForElevator();
+        building.getFloor(6).waitForElevator();
         elevator.move();
         elevator.move();
         elevator.move();
-        // Should have filled the elevator, leaving people on 4
-        // Get to the ground floor
-        while (elevator.getCurrentFloor() != 1) {
-            elevator.move();
-            if (elevator.getCurrentFloor() == 1) {
-            } else {
-            }
-        }
-        // Go back to 4
-        while (elevator.getCurrentFloor() != 4) {
-            elevator.move();
-            if (elevator.getCurrentFloor() == 4) {
-                // Check to see that the remaining passengers boarded
-            } else {
-            }
-        }
-        System.out.println("End Checking 4th Full");
+        elevator.move();
+        elevator.move();
+        elevator.move();
+        elevator.move();
+        elevator.move();
+        elevator.move();
+        elevator.move();
+        elevator.move();
+        elevator.move();
+        System.out.println("End checking higher floors can call and board");
+
+    // // Check handling of a full elevator.
+    //     Building building = new Building();
+    //     Elevator elevator = building.getElevator();
+    //     // Have enough people waiting on the 4th floor to exceed elevator capacity by 50%
+    //     System.out.println("Checking 4th Full");
+    //     int waiting = (int) (Elevator.CAPACITY * 1.5);
+    //     for (int i = 0; i < waiting; i++) {
+    //         building.getFloor(4).waitForElevator();
+    //     }
+    //     // Move to 4, checking state
+    //     elevator.move();
+    //     elevator.move();
+    //     elevator.move();
+    //     // Should have filled the elevator, leaving people on 4
+    //     // Get to the ground floor
+    //     while (elevator.getCurrentFloor() != 1) {
+    //         elevator.move();
+    //         if (elevator.getCurrentFloor() == 1) {
+    //         } else {
+    //         }
+    //     }
+    //     // Go back to 4
+    //     while (elevator.getCurrentFloor() != 4) {
+    //         elevator.move();
+    //         if (elevator.getCurrentFloor() == 4) {
+    //             // Check to see that the remaining passengers boarded
+    //         } else {
+    //         }
+    //     }
+    //     System.out.println("End Checking 4th Full");
     }
 }
