@@ -96,6 +96,7 @@ public class Elevator {
 
     public void boardPassenger(int destinationFloorNumber) throws ElevatorFullException {
         if(this.getPassengers() >= CAPACITY) {
+            myBuilding.getFloor(destinationFloorNumber).waitForElevator(); // passengers who can't board because of full capacity get placed in the wait for elevator queue
             throw new ElevatorFullException("Elevator is at full capacity. Please wait for the elevator to return.");
         }
         else {

@@ -13,37 +13,37 @@ public class myTest {
             Elevator elevator = building.getElevator();
 
             try {
-                elevator.boardPassenger(1);
+                elevator.boardPassenger(7);
             }
             catch(ElevatorFullException e) {
                 elevator.move();
             }
             try {
-                elevator.boardPassenger(1);
+                elevator.boardPassenger(7);
             }
             catch(ElevatorFullException e) {
                 elevator.move();
             }
             try {
-                elevator.boardPassenger(2);
+                elevator.boardPassenger(6);
             }
             catch(ElevatorFullException e) {
                 elevator.move();
             }
             try {
-                elevator.boardPassenger(2);
+                elevator.boardPassenger(6);
             }
             catch(ElevatorFullException e) {
                 elevator.move();
             }
             try {
-                elevator.boardPassenger(3);
+                elevator.boardPassenger(5);
             }
             catch(ElevatorFullException e) {
                 elevator.move();
             }
             try {
-                elevator.boardPassenger(3);
+                elevator.boardPassenger(5);
             }
             catch(ElevatorFullException e) {
                 elevator.move();
