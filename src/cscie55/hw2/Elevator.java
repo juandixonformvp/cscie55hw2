@@ -67,14 +67,14 @@ public class Elevator {
         if(numWaitingOnFloor > 0 && this.getPassengers() < CAPACITY) {  // loop to board the persons waiting on a floor 
             for (int i = 0; i < numWaitingOnFloor; i++) {               // will only board waiting people up to the capacity limit
                 try {
-                    if (this.currentFloor == 1) {                       // instructions state waiting passengers on
-                        this.boardPassenger(Building.FLOORS);           // first floor go to higher floor
-                        myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); // for each person boarded, decrement waiting array   
-                    }                                           
-                    else {
+                    // if (this.currentFloor == 1) {                       // instructions state waiting passengers on
+                    //     this.boardPassenger(Building.FLOORS);           // first floor go to higher floor
+                    //     myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); // for each person boarded, decrement waiting array   
+                    // }                                           
+                    // else {
                         this.boardPassenger(1);                         // people waiting on higher floors go to floor 1.
                         myBuilding.getFloor(this.currentFloor).clearIsWaitingArray(); // for each person boarded, decrement waiting array  
-                    }
+                    // }
                 }
                 catch(ElevatorFullException e) {
                     break;
@@ -90,7 +90,7 @@ public class Elevator {
 */
     public void boardPassenger(int destinationFloorNumber) throws ElevatorFullException {
         if(this.getPassengers() >= CAPACITY) {
-            myBuilding.getFloor(this.currentFloor).waitForElevator(); // passengers who can't board because of full capacity get placed in the wait for elevator queue
+            // myBuilding.getFloor(this.currentFloor).waitForElevator(); // passengers who can't board because of full capacity get placed in the wait for elevator queue
             throw new ElevatorFullException("Elevator is at full capacity. Please wait for the elevator to return.");
         }
         else {
